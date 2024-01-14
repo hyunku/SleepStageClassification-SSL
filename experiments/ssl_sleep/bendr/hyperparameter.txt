@@ -1,0 +1,49 @@
+hyperparameter experiments - default contextualizer hyperparameter
+                                                                      (300epoch)
+data(sec)     lr      num_negatives    mask_span    temperature     warmup rate(%)      50 epoch
+30          0.001           100            6            0.1             10          => [Fine Tuning] => Acc: 0.5083 MF1 0.3862 	[Frozen Backbone] => Acc: 0.2798 MF1: 0.1721
+60          0.001           100            6            0.1             10          => [Fine Tuning] => Acc: 0.2438 MF1 0.1558 	[Frozen Backbone] => Acc: 0.3532 MF1: 0.1485
+30          0.0005          100            6            0.1             10          => [Fine Tuning] => Acc: 0.4751 MF1 0.3765 	[Frozen Backbone] => Acc: 0.4169 MF1: 0.3242
+30          0.0005          200            6            0.1             10          => [Fine Tuning] => Acc: 0.5194 MF1 0.4029 	[Frozen Backbone] => Acc: 0.3878 MF1: 0.2592
+30          0.0005          50             6            0.1             10          => [Fine Tuning] => Acc: 0.5000 MF1 0.3877 	[Frozen Backbone] => Acc: 0.3823 MF1: 0.1890
+30          0.0005          100            6            0.5             10          => [Fine Tuning] => Acc: 0.4903 MF1 0.3760 	[Frozen Backbone] => Acc: 0.3643 MF1: 0.2661
+30          0.0005          100            4            0.1             10          => [Fine Tuning] => Acc: 0.4917 MF1 0.3970 	[Frozen Backbone] => Acc: 0.3643 MF1: 0.1734
+30          0.0005          100            8            0.1             10          => [Fine Tuning] => Acc: 0.5000 MF1 0.3708 	[Frozen Backbone] => Acc: 0.3546 MF1: 0.1710
+60          0.0005          100            6            0.1             10          => [Fine Tuning] => Acc: 0.5111 MF1 0.4023 	[Frozen Backbone] => Acc: 0.3781 MF1: 0.1808
+60          0.0005          100            6            0.1             5           => [Fine Tuning] => Acc: 0.4806 MF1 0.3474 	[Frozen Backbone] => Acc: 0.3241 MF1: 0.1582
+60          0.0005          100            8            0.1             5           => [Fine Tuning] => Acc: 0.5042 MF1 0.4081 	[Frozen Backbone] => Acc: 0.3629 MF1: 0.2324
+60          0.0005          20             6            0.1             10          => [Fine Tuning] => Acc: 0.3643 MF1 0.1790 	[Frozen Backbone] => Acc: 0.3324 MF1: 0.1656
+60          0.00005         20             6            0.1             5(200epoch) => [Fine Tuning] => Acc: 0.4723 MF1 0.3015 	[Frozen Backbone] => Acc: 0.3532 MF1: 0.2021
+60          0.00005         100            6            0.1             3           => [Fine Tuning] => Acc: 0.5000 MF1 0.3277 	[Frozen Backbone] => Acc: 0.3781 MF1: 0.2330
+                                                                                    => [Fine Tuning] => Acc: 0.4751 MF1 0.3209 	[Frozen Backbone] => Acc: 0.3657 MF1: 0.2089
+                                                                                    => [Fine Tuning] => Acc: 0.4557 MF1 0.2847 	[Frozen Backbone] => Acc: 0.4141 MF1: 0.2178
+30          0.00005         100            6            0.1             3           => [Fine Tuning] => Acc: 0.4806 MF1 0.3474 	[Frozen Backbone] => Acc: 0.3241 MF1: 0.1582
+150         0.00005         100            6            0.1             2           => [Fine Tuning] => Acc: 0.4335 MF1 0.3256 	[Frozen Backbone] => Acc: 0.3657 MF1: 0.2194
+                                                                                    => [Fine Tuning] => Acc: 0.4294 MF1 0.2943 	[Frozen Backbone] => Acc: 0.3947 MF1: 0.2277
+60          0.00005         100            12           0.1             3           => [Fine Tuning] => Acc: 0.5028 MF1 0.3663 	[Frozen Backbone] => Acc: 0.4044 MF1: 0.2477
+60          0.00005         20             12           0.1             3           => [Fine Tuning] => Acc: 0.4363 MF1 0.2875 	[Frozen Backbone] => Acc: 0.3809 MF1: 0.2189
+60          0.00001         100            12           0.1             3           => [Fine Tuning] => Acc: 0.4889 MF1 0.3601 	[Frozen Backbone] => Acc: 0.4127 MF1: 0.2599
+60          0.000005        100            6            0.1             5           => [Fine Tuning] => Acc: 0.5166 MF1 0.3710 	[Frozen Backbone] => Acc: 0.4307 MF1: 0.2812
+30          0.00005         100            6            0.1             3           => [Fine Tuning] => Acc: 0.4584 MF1 0.3231 	[Frozen Backbone] => Acc: 0.3629 MF1: 0.1387 # normalize + bp
+30          0.000005        100            6            0.1             5           => [Fine Tuning] => Acc: 0.3934 MF1 0.2380 	[Frozen Backbone] => Acc: 0.3476 MF1: 0.1091 # normalize + bp
+30          0.00005         20             6            0.1             3
+
+
+contextualizer tuning - lr : 0.0005, num_negatives : 100, mask_span : 6, temp : 0.1, warmup rate : 10%
+
+30sec data
+dim       heads       layers      dropout       50 epoch
+3076        8           8           0.15    => [Fine Tuning] => Acc: 0.4751 MF1 0.3765 	[Frozen Backbone] => Acc: 0.4169 MF1: 0.3242
+2048        8           8           0.15    => [Fine Tuning] => Acc: 0.5125 MF1 0.3855 	[Frozen Backbone] => Acc: 0.4197 MF1: 0.3402 ( 50 epoch )
+                                            => [Fine Tuning] => Acc: 0.4986 MF1 0.3520 	[Frozen Backbone] => Acc: 0.4460 MF1: 0.3478 ( 100 epoch )
+                                            => [Fine Tuning] => Acc: 0.5014 MF1 0.3899 	[Frozen Backbone] => Acc: 0.4529 MF1: 0.3499 ( 150 epoch )
+2048        8           6           0.15    => [Fine Tuning] => Acc: 0.4986 MF1 0.3381 	[Frozen Backbone] => Acc: 0.3740 MF1: 0.2949
+
+60sec data
+2048        8           8           0.15    => [Fine Tuning] => Acc: 0.5055 MF1 0.4049 	[Frozen Backbone] => Acc: 0.3961 MF1: 0.3355
+2048        8           12          0.15    => [Fine Tuning] => Acc: 0.4584 MF1 0.3556 	[Frozen Backbone] => Acc: 0.4252 MF1: 0.2695
+
+contextualizer tuning - lr : 0.00001, num_negatives : 100, mask_span : 12, temp : 0.1, warmup_rate : 3%
+
+60sec data
+2048        8           12           0.15   => [Fine Tuning] => Acc: 0.4598 MF1 0.3545 	[Frozen Backbone] => Acc: 0.3809 MF1: 0.2250

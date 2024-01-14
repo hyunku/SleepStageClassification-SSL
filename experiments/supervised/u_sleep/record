@@ -1,0 +1,6 @@
+trial    preprocess   batch      lr          20 epoch performance          eeg epoch(segment)
+0           bp+std      64      5e-5        Acc: 0.7902 MF1: 0.7020               1
+1           robust      64      5e-5        Acc: 0.2312 MF1: 0.1257               35
+2           bp+std      64      5e-5        Acc: 0.7525 MF1: 0.4834               35
+                                            Acc: 0.7152 MF1: 0.4461 (40 epoch)
+                                            Acc: 0.7061 MF1: 0.4442 (60 epoch)
